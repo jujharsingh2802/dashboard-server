@@ -12,6 +12,8 @@ app.use(express.json());
 //routes
 app.use('/api', productRoute);
 
-app.listen(config.port, () =>
+const port = process.env.PORT || 4000;
+
+app.listen(port, () =>
   console.log(`Server is live @ ${config.hostUrl}`),
 );
