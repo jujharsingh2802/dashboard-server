@@ -25,7 +25,7 @@ export const createProduct = async (req, res, next) => {
 
 export const getProducts = async (req, res, next) => {
   try {
-    const products = await getDocs(collection(db, 'products'));
+    const products = await getDocs(collection(db, 'UserPost'));
     const productArray = [];
     if (products.empty) {
       res.status(400).send('No Products found');
