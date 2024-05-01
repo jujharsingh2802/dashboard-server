@@ -83,7 +83,7 @@ export const deleteProduct = async (req, res, next) => {
   try {
     const id = req.params.id;
     const deletedProduct = await getDoc(doc(db, 'UserPost', id));
-    await deleteDoc(doc(db, 'products', id));
+    await deleteDoc(doc(db, 'UserPost', id));
     res.status(200).send(`product deleted successfully: ${deletedProduct.id}`);
   } catch (error) {
     res.status(400).send(error.message);
